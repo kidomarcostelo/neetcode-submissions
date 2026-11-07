@@ -1,0 +1,29 @@
+class Solution {
+    /**
+     * @param {number[]} numbers
+     * @param {number} target
+     * @return {number[]}
+     */
+    twoSum(numbers: number[], target: number): number[] {
+
+        // binary search kay this is alread ordered and no duplicates
+
+        let left = 0;
+        let right = numbers.length - 1;
+
+        while (left != right){
+            let sum = numbers[left] + numbers[right];
+
+            if (sum == target){
+                return [left+1, right+1];
+            }
+            else if (sum > target){
+                right--;
+            }
+            else {
+                left++;
+            }
+        }
+        return [];
+    }
+}
